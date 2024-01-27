@@ -6,6 +6,7 @@ public class Movement : MonoBehaviour
 {
     public CharacterController controller;
     public Transform groundCheck;
+    public Animator anim;
 
     public float gravity = -9.81f;
     public int speed = 5;
@@ -52,5 +53,7 @@ public class Movement : MonoBehaviour
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+
+        anim.SetBool("Walking", isGrounded && direction.magnitude >= 0.1f);
     }
 }
