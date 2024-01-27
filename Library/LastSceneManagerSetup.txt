@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Lucy.unity
+- path: Assets/Scenes/Anthony.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
