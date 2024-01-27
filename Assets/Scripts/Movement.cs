@@ -14,6 +14,7 @@ public class Movement : MonoBehaviour
     public float turnSmoothTime = 0.1f;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
+    public float maxJumpSpeed = 100;
 
     Vector3 velocity;
     float turnSmoothVelocity;
@@ -35,7 +36,8 @@ public class Movement : MonoBehaviour
 
         if (Input.GetKeyDown("space"))
         {
-            velocity.y += jumpForce;
+            if (velocity.y < maxJumpSpeed)
+               velocity.y += jumpForce;
         }
 
         float horizontal = Input.GetAxis("Horizontal");
